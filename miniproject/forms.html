@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+            var username=document.getElementById("uname");
+            var password=document.getElementById("pass");
+            if(username.value==""){
+                alert("No Username entered");
+                username.style.border="5px solid red";
+                document.getElementById("lblname").style.visibility="visible";
+                return false;
+            }
+            else if(password.value==""){
+                alert("blank password");
+                return false;
+            }
+            else if(password.value.length<5){
+                alert("password is too short");
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form action="message.html" onsubmit="return validate()">
+        <input id="uname" placeholder="username" type="text">
+        <label id="lblname" style="color: orangered; visibility: hidden;">Invalid</label>
+        <br>
+        <input id="pass" placeholder="password" type="password">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

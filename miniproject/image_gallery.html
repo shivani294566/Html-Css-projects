@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    
+    <style>
+        html{
+            background-color: beige;
+        }
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin:20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    background-color: bisque;
+}
+
+.gallery-item {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.1.jpg" alt="Image 1" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.2.jpg" alt="Image 2" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.3.jpg" alt="Image 3" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.4.jpg" alt="Image 4" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.5.jpg" alt="Image 5" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.6.jpg" alt="Image 6" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.7.jpg" alt="Image 7" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.8.jpg" alt="Image 8" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.9.jpg" alt="Image 9" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.10.jpg" alt="Image 10" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.11.jpg" alt="Image 11" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.12.jpg" alt="Image 12" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.13.jpg" alt="Image 13" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.14.jpg" alt="Image 14" onclick="openLightbox(this)">
+        </div><br>
+        <div class="gallery-item">
+            <img src="c:\Users\shivi\Downloads\image.15.jpg" alt="Image 15" onclick="openLightbox(this)">
+        </div><br>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" class="lightbox-img">
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            document.getElementById("lightbox").style.display = "flex";
+            document.getElementById("lightbox-img").src = img.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
